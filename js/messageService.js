@@ -8,7 +8,9 @@ angular.module('chatroom').service('messageService', function($http){
     return $http({
 			method: 'GET',
 			url: 'http://practiceapi.devmounta.in/api/chats'
-		});
+		}).then(function(response){
+      return response.data;
+    });
   };
 
 
@@ -22,7 +24,7 @@ angular.module('chatroom').service('messageService', function($http){
     return $http({
 			method: 'POST',
 			url: 'http://practiceapi.devmounta.in/api/chats',
-      data: {message: yourMessage}
+      data: {message: yourMessage},
 		});
   };
 

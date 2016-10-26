@@ -5,9 +5,9 @@ angular.module('chatroom').controller('mainCtrl', function($scope, messageServic
 
   $scope.getMessages = function() {
     messageService.getMessages().then(function(response) {
-      $scope.messages = response.data;
-      $scope.messages.reverse();
-      // console.log(response);
+      $scope.messages = response;
+      // $scope.messages.reverse(); //can use this is don't want to use orderBy on the ng-repeat
+      // console.log(response); //can use this to test what's coming in the response
     });
   };
 
