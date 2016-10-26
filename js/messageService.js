@@ -28,6 +28,12 @@ angular.module('chatroom').service('messageService', function($http){
 		});
   };
 
-
+  this.postCookie = function(newCookie) {
+    return $http({
+      method: 'POST',
+      url: 'http://practiceapi.devmounta.in/api/cookies',
+      data: {cookie: newCookie}
+    });
+  };
 
 });
